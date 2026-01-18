@@ -85,7 +85,7 @@ header {
     justify-content: center;
     align-items: center;
     /* Gradiente oscuro + superposición */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../src/o48jmcyfgsm41.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('src/o48jmcyfgsm41.jpg');
     background-size: cover;
     /* Imagen de fondo del hero */
     background-position: center;
