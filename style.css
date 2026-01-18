@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #c0392b;
+    --highlight-color: #f1c40f;
+    --dark-bg: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --text-main: #ecf0f1;
+    --text-muted: #bdc3c7;
+    --steel-grey: #7f8c8d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--text-main);
+    background-color: var(--dark-bg);
+    line-height: 1.6;
+}
+
+header {
+    background-color: rgba(20, 20, 25, 0.9);
+    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    /* Línea roja para factor visual */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 2px solid var(--text-main);
+    padding: 0.25rem 0.5rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--highlight-color);
+    text-shadow: 0 0 8px rgba(241, 196, 15, 0.5);
+}
+
+/* Main 1: Sección Hero */
+.hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Gradiente oscuro + superposición */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../src/o48jmcyfgsm41.jpg');
+    background-size: cover;
+    /* Imagen de fondo del hero */
+    background-position: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    margin-top: 70px;
+
+    /* Compensación para header fijo */
+}
+
+/* Elemento grid ::before eliminado para limpiar el fondo de imagen */
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 4px;
+    animation: zoomIn 1.5s ease-out;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.2rem;
+    max-width: 700px;
+    color: var(--highlight-color);
+    border-left: 3px solid var(--accent-color);
+    padding-left: 1rem;
+    text-align: left;
+    animation: slideInLeft 1s ease-out 0.5s backwards;
+}
+
+/* Main 2: Sección de Tarjetas */
+.features {
+    padding: 6rem 2rem;
+    background-color: #222;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--steel-grey);
+    padding: 0;
+    border-radius: 4px;
+    width: 400px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    border-color: var(--highlight-color);
+}
+
+.card-img-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid var(--accent-color);
+    overflow: hidden;
+}
+
+.card-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 2rem;
+    text-align: left;
+}
+
+.card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--white);
+    border-bottom: 1px solid var(--steel-grey);
+    padding-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.specs-list {
+    list-style: none;
+    margin-top: 1.5rem;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+    color: var(--steel-grey);
+}
+
+.specs-list li {
+    margin-bottom: 5px;
+}
+
+.specs-list strong {
+    color: var(--highlight-color);
+}
+
+/* Sección de Video */
+.video-section {
+    padding: 6rem 2rem;
+    background-color: var(--dark-bg);
+    text-align: center;
+    border-top: 2px solid var(--steel-grey);
+}
+
+.video-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.video-placeholder {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    background-color: #000;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--steel-grey);
+    color: var(--text-muted);
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* Animaciones */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animación de Avión Volando */
+.sky-container {
+    width: 100%;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    pointer-events: none;
+}
+
+.flying-jet {
+    width: 150px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: flyAcross 15s linear infinite;
+    opacity: 0.8;
+    filter: invert(1);
+    filter: invert(1);
+    /* Invertir a blanco si se usa silueta negra */
+}
+
+@keyframes flyAcross {
+    0% {
+        left: -200px;
+        transform: translateY(-50%) rotate(5deg);
+    }
+
+    45% {
+        transform: translateY(-60%) rotate(0deg);
+    }
+
+    100% {
+        left: 100vw;
+        transform: translateY(-50%) rotate(-5deg);
+    }
+}
